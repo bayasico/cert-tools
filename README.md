@@ -96,6 +96,20 @@ instantiate-certificate-batch -c conf.ini
 ```
 
 
+#### Notice  
+If you proceed as before, you will get the following error  
+```
+Failed validating 'required' in schema:
+...
+'nonce' is a required property  
+```  
+Fix the code or modify the json so that the error no longer occurs  
+this scheme is defined in [cert-schema](https://github.com/1EdTech/cert-schema)  
+```
+nonce: "A piece of unique data to avoid hash collusion and replay attacks"
+```  
+
+
 #### About
 
 Populates the certificate template (created by the previous script) with recipient data from a csv file. It generates a certificate per recipient based on the values in the csv file.
